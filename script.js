@@ -89,7 +89,7 @@ function animateCounter(element, target, duration = 2000) {
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            const statNumbers = document.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
                 const target = parseInt(stat.getAttribute('data-target'));
                 if (target) {
@@ -101,7 +101,7 @@ const statsObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-const statsSection = document.querySelector('.stats');
+const statsSection = document.querySelector('.about');
 if (statsSection) {
     statsObserver.observe(statsSection);
 }
