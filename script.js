@@ -85,14 +85,14 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
-// Observe stats section
+// Observe stats section - ИСПРАВЛЕННЫЙ СЕЛЕКТОР
 const statsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            const statNumbers = document.querySelectorAll('.stat-number');
             statNumbers.forEach(stat => {
                 const target = parseInt(stat.getAttribute('data-target'));
-                if (target) {
+                if (target && stat.textContent === '0') {
                     animateCounter(stat, target);
                 }
             });
@@ -101,7 +101,8 @@ const statsObserver = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.5 });
 
-const statsSection = document.querySelector('.stats');
+// ИСПРАВЛЕННАЯ СТРОКА - используем .about вместо .stats
+const statsSection = document.querySelector('.about');
 if (statsSection) {
     statsObserver.observe(statsSection);
 }
@@ -123,4 +124,3 @@ window.addEventListener('scroll', () => {
 });
 
 // Removed parallax effect to prevent overlapping issues
-
