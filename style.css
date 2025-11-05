@@ -750,7 +750,7 @@ section {
 }
 
 .footer-social-link:hover {
-    opacity: 0.8;
+    opacity: 0.08;
     transform: scale(1.1);
 }
 
