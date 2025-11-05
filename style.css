@@ -746,11 +746,11 @@ section {
     color: var(--white);
     text-decoration: none;
     transition: all 0.3s ease;
-    opacity: 0.08;
+    opacity: 0.05;
 }
 
 .footer-social-link:hover {
-    opacity: 0.15;
+    opacity: 0.10;
     transform: scale(1.1);
 }
 
